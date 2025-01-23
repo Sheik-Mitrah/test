@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Home from './Home'
+import Lifecycle from './lifeCycle'
+import { Buttons } from './buttons'
+import { DisplayState } from './displayStates'
 
 const App = () => {
   const [state, setState] = useState(10)
@@ -7,7 +10,6 @@ const App = () => {
   const [show, setShow] = useState(false)
 
   const expen = useMemo(() => {
-    fo
     return dummy + 1
   }, [dummy])
 
@@ -16,12 +18,6 @@ const App = () => {
     data = 11
     setState(p => p + 1)
   }
-
-  useEffect(() => {
-
-    console.log('Effect');
-
-  }, [])
 
   return (
     <div>
@@ -33,7 +29,6 @@ const App = () => {
       </div>
 
       <div>
-
         data-{data}
       </div>
       <div>
@@ -43,8 +38,9 @@ const App = () => {
         <button onClick={e => setShow(p => !p)}>show </button>
         {show && <Home state={state} setState={setState} />}
       </div>
-
-
+      <Lifecycle/>
+      <Buttons/>
+      <DisplayState/>
     </div>
   )
 }

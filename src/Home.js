@@ -9,7 +9,6 @@ const Home = ({ state, setState }) => {
     useEffect(() => {
         inputRef.current.focus();
 
-
         const interval = setInterval(() => { setState(p => p + 1) }, 1000 * 3)
 
         return () => {
